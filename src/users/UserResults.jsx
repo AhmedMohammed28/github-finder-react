@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Spinner from "../components/layout/Spinner";
-
-// fetch http request as soon as the component loads
+import UserItem from "./UserItem";
 
 function UserResults() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // fetch http request as soon as the component loads
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -28,7 +28,9 @@ function UserResults() {
     return (
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {users.map((user) => (
-          <h1>{user.login}</h1>
+          <h1>
+            <UserItem key={user.id} user={user} />
+          </h1>
         ))}
       </div>
     );
