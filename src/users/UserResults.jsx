@@ -5,10 +5,11 @@ import GithubContext from "../context/github/GithubContext";
 
 function UserResults() {
   const { users, loading, fetchUsers } = useContext(GithubContext);
+
   // fetch http request as soon as the component loads
   useEffect(() => {
     fetchUsers();
-  }, []);
+  });
 
   if (!loading) {
     return (
