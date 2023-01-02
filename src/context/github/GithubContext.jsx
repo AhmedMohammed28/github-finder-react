@@ -22,10 +22,13 @@ export const GithubProvider = ({ children }) => {
       },
     });
     const data = await res.json();
-    dispatch({
-      type: "GET_USERS",
-      payload: data,
-    });
+    setTimeout(() => {
+      dispatch({
+        type: "GET_USERS",
+        payload: data,
+        loading: false,
+      });
+    }, 2000);
   };
 
   return (
