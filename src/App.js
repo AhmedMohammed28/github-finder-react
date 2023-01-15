@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
+import User from "./components/pages/User";
 import NotFound from "./components/pages/NotFound";
 import Alert from "./components/layout/Alert";
 import Footer from "./components/layout/Footer";
@@ -19,6 +20,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/about" element={<About />}></Route>
+                <Route path="/user/:login" element={<User />}></Route>
                 <Route path="/notfound" element={<NotFound />}></Route>
                 <Route path="/*" element={<NotFound />}></Route>
               </Routes>
