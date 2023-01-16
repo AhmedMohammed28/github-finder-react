@@ -16,8 +16,8 @@ function UserSearch() {
     if (text === "") {
       setAlert("Please enter something", "error");
     } else {
-      // @todo - search users
       searchUsers(text);
+
       setText("");
     }
   };
@@ -47,7 +47,7 @@ function UserSearch() {
       </div>
       {users.length > 0 && (
         <div>
-          <button className="btn btn-ghost btn-lg" onClick={clearUsers}>
+          <button onClick={clearUsers} className="btn btn-ghost btn-lg">
             Clear
           </button>
         </div>
